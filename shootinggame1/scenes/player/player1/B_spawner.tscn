@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://1uh0smdy37m1"]
+
+[ext_resource type="Script" uid="uid://cd6gk8g022sv" path="res://scripts/player/player1/bullet_spawner.gd" id="1_kcbu7"]
+[ext_resource type="PackedScene" uid="uid://5nu8iw2vkknh" path="res://scenes/player/player1/B_spawner_player.tscn" id="2_ah6ds"]
+[ext_resource type="PackedScene" uid="uid://b83med7kvvune" path="res://scenes/player/player1/B_spawner_sub.tscn" id="3_4urmn"]
+
+[node name="Spawner" type="Node2D" unique_id=1503485594]
+script = ExtResource("1_kcbu7")
+
+[node name="SpawnerPlayer" parent="." unique_id=899800432 instance=ExtResource("2_ah6ds")]
+
+[node name="SpawnerSub" parent="." unique_id=2099968502 instance=ExtResource("3_4urmn")]

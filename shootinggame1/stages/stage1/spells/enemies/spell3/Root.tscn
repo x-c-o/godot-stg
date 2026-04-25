@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://h63ro6qpsvcg"]
+
+[ext_resource type="Script" uid="uid://dhkjs5ug47f5a" path="res://stages/stage1/spells/enemies/spell3/root.gd" id="1_ywvd0"]
+
+[node name="Root" type="Node2D"]
+script = ExtResource("1_ywvd0")

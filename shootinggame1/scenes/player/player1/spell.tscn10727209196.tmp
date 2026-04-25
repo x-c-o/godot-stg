@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://qi1j1e111y4a"]
+
+[ext_resource type="Texture2D" uid="uid://btnuah2ms66mv" path="res://assets/images/player/player1/bomb.png" id="1_k7fl4"]
+[ext_resource type="Script" uid="uid://o4ye18u43siu" path="res://scripts/player/player1/spell.gd" id="1_sxu28"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sxu28"]
+radius = 96.0
+
+[node name="Spell" type="Area2D" unique_id=926283792]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_sxu28")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1351130173]
+scale = Vector2(2, 2)
+texture = ExtResource("1_k7fl4")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1846929899]
+shape = SubResource("CircleShape2D_sxu28")

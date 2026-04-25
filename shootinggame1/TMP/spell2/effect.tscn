@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cla51hxhrm4sv"]
+
+[ext_resource type="Script" uid="uid://cekmnvccdd1bd" path="res://TMP/spell2/effect.gd" id="1_cia28"]
+
+[sub_resource type="Gradient" id="Gradient_gataj"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.666667)
+
+[node name="Line2D" type="Line2D"]
+width = 1.0
+gradient = SubResource("Gradient_gataj")
+script = ExtResource("1_cia28")

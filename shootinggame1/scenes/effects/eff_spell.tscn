@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://dj4jlwl2r55v8"]
+
+[ext_resource type="Script" uid="uid://cjih0860yn62l" path="res://scripts/effects/eff_spell.gd" id="1_tkkt4"]
+[ext_resource type="Shader" uid="uid://c4ocy001qdbh7" path="res://assets/shaders/dissolve.gdshader" id="1_v1myf"]
+[ext_resource type="FontFile" uid="uid://dli5bcq8ns64y" path="res://assets/fonts/XiaolaiSC-Regular.ttf" id="2_tkkt4"]
+[ext_resource type="Texture2D" uid="uid://cr8dmv51rtipi" path="res://assets/models/grass/textures/grass_medium_01_arm_1k.jpg" id="3_athti"]
+[ext_resource type="Shader" uid="uid://d0ktn5r2871la" path="res://assets/shaders/dissolve_label.gdshader" id="3_h6nkg"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tkkt4"]
+frequency = 0.004
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h6nkg"]
+width = 720
+height = 800
+noise = SubResource("FastNoiseLite_tkkt4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_athti"]
+shader = ExtResource("1_v1myf")
+shader_parameter/noise = SubResource("NoiseTexture2D_h6nkg")
+shader_parameter/ratio = 1.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_v1myf"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tkkt4"]
+noise = SubResource("FastNoiseLite_v1myf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h6nkg"]
+shader = ExtResource("3_h6nkg")
+shader_parameter/noise = SubResource("NoiseTexture2D_tkkt4")
+shader_parameter/ratio = 1.0
+
+[sub_resource type="Animation" id="Animation_tkkt4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Name/NameLabel:material:shader_parameter/ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Name:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-200, -200)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Name:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.53930676]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Background:material:shader_parameter/ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_h6nkg"]
+resource_name = "show"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Name/NameLabel:material:shader_parameter/ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2.5),
+"transitions": PackedFloat32Array(0.5, 4, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Name:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2.5),
+"transitions": PackedFloat32Array(0.4, 5.2780337, 1),
+"update": 0,
+"values": [Vector2(-200, -200), Vector2(0, 0), Vector2(200, 200)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Name:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2.5),
+"transitions": PackedFloat32Array(0.42870942, 4.438278, 1),
+"update": 0,
+"values": [-0.53930676, 0.17453292519943295, 0.8726646259971648]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Background:material:shader_parameter/ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.033333335, 1, 2.5),
+"transitions": PackedFloat32Array(0.4061262, 2.549119, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_athti"]
+_data = {
+&"RESET": SubResource("Animation_tkkt4"),
+&"show": SubResource("Animation_h6nkg")
+}
+
+[node name="EffSpell" type="Node2D" unique_id=702265681]
+script = ExtResource("1_tkkt4")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1234576782]
+material = SubResource("ShaderMaterial_athti")
+texture = ExtResource("3_athti")
+
+[node name="Name" type="Node2D" parent="." unique_id=444618802]
+position = Vector2(-200, -200)
+rotation = -0.53930676
+
+[node name="NameLabel" type="Label" parent="Name" unique_id=371197491]
+material = SubResource("ShaderMaterial_h6nkg")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -352.0
+offset_top = -33.5
+offset_right = 352.0
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.23333496, 0.41990814, 0.43033358, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("2_tkkt4")
+theme_override_font_sizes/font_size = 64
+text = "符卡名「就放在这里吧」"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=141800219]
+libraries/ = SubResource("AnimationLibrary_athti")
+autoplay = &"show"

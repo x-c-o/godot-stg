@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://djmohamrfvyk2"]
+
+[ext_resource type="Shader" uid="uid://mlejn2axvo0h" path="res://assets/shaders/brightness.gdshader" id="1_l84uw"]
+[ext_resource type="Texture2D" uid="uid://c8bpql50wvm2n" path="res://assets/images/player/player1/player.png" id="2_ctvqc"]
+[ext_resource type="Script" uid="uid://cu2d64mnchms2" path="res://scripts/player/player1/B_spawner_sub_single.gd" id="3_ebgb4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i0mty"]
+resource_local_to_scene = true
+shader = ExtResource("1_l84uw")
+shader_parameter/brightness = 0.0
+
+[node name="SpawnerSubSingle" type="Sprite2D" unique_id=1413301649]
+material = SubResource("ShaderMaterial_i0mty")
+scale = Vector2(2, 2)
+texture = ExtResource("2_ctvqc")
+region_enabled = true
+region_rect = Rect2(64, 144, 16, 16)
+script = ExtResource("3_ebgb4")

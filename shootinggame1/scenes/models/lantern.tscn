@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://byewuc8vdwn6a"]
+
+[ext_resource type="PackedScene" uid="uid://drc1221vc8wvi" path="res://assets/models/lantern/spherical_japanese_paper_lantern.glb" id="1_py8ry"]
+[ext_resource type="Script" uid="uid://cey4f64pkacbd" path="res://scripts/models/lantern.gd" id="1_vp0te"]
+
+[node name="Lantern" type="Node3D" unique_id=67138745]
+script = ExtResource("1_vp0te")
+
+[node name="Sketchfab_Scene" parent="." unique_id=1358144603 instance=ExtResource("1_py8ry")]
+
+[node name="Light" type="OmniLight3D" parent="." unique_id=317482459]

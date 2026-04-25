@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://mlss2tmggl76"]
+
+[ext_resource type="Script" uid="uid://bmmdte2xkgy3r" path="res://stages/stage1/backgrounds/background.gd" id="1_15vaw"]
+[ext_resource type="Texture2D" uid="uid://csh78dy83cvvr" path="res://assets/images/sky/NightSkyHDRI001_8K_TONEMAPPED.jpg" id="3_id10i"]
+[ext_resource type="PackedScene" uid="uid://d3nq01rqow5f4" path="res://scenes/models/torii.tscn" id="3_pechk"]
+[ext_resource type="Texture2D" uid="uid://dkq1jr5lh28x8" path="res://assets/models/pavement/textures/cobblestone_color_diff_1k.jpg" id="5_djb4b"]
+[ext_resource type="Texture2D" uid="uid://c6gette6btk7d" path="res://assets/models/pavement/textures/cobblestone_color_arm_1k.jpg" id="6_6rxlk"]
+[ext_resource type="Texture2D" uid="uid://3e5amef5um07" path="res://assets/models/pavement/textures/cobblestone_color_nor_gl_1k.jpg" id="7_p1jb4"]
+
+[sub_resource type="Curve" id="Curve_pechk"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.23913041, 1), 0.0, 0.0, 0, 0, Vector2(0.77898544, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_id10i"]
+curve = SubResource("Curve_pechk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pechk"]
+emission_shape = 3
+emission_box_extents = Vector3(4, 2.5, 5)
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+damping_min = 0.010000001
+damping_max = 0.020000001
+scale_min = 0.03
+scale_max = 0.12
+scale_curve = SubResource("CurveTexture_id10i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pechk"]
+albedo_color = Color(1, 1, 0.5882353, 1)
+emission_enabled = true
+emission = Color(1, 1, 0.5882353, 1)
+emission_energy_multiplier = 6.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_id10i"]
+material = SubResource("StandardMaterial3D_pechk")
+radial_segments = 4
+rings = 1
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
+sky_top_color = Color(0.03800154, 2.1303873e-05, 0.17254844, 1)
+sky_horizon_color = Color(0.38360906, 0.59073806, 0.78474146, 1)
+sky_cover = ExtResource("3_id10i")
+ground_bottom_color = Color(0.00089559145, 0.04863757, 0.076114945, 1)
+ground_horizon_color = Color(0.18331996, 0.37257567, 0.54859996, 1)
+
+[sub_resource type="Sky" id="Sky_h2yge"]
+sky_material = SubResource("ProceduralSkyMaterial_0xm2m")
+
+[sub_resource type="Environment" id="Environment_0xm2m"]
+background_mode = 2
+sky = SubResource("Sky_h2yge")
+tonemap_mode = 2
+glow_enabled = true
+glow_strength = 2.0
+glow_hdr_threshold = 0.6
+fog_enabled = true
+fog_light_color = Color(0.023529412, 0.15294118, 0.3019608, 1)
+fog_density = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ylegh"]
+resource_name = "cobblestone_color"
+cull_mode = 2
+albedo_texture = ExtResource("5_djb4b")
+metallic_texture = ExtResource("6_6rxlk")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("6_6rxlk")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("7_p1jb4")
+uv1_scale = Vector3(2, 100, 1)
+texture_filter = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_id10i"]
+material = SubResource("StandardMaterial3D_ylegh")
+size = Vector2(20, 1000)
+
+[node name="Background" type="Node3D" unique_id=1659484941]
+script = ExtResource("1_15vaw")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1906636835]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.5, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=787390327]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1, 20)
+amount = 16
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_pechk")
+draw_pass_1 = SubResource("SphereMesh_id10i")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2076784359]
+environment = SubResource("Environment_0xm2m")
+
+[node name="Torii" parent="." unique_id=897180597 instance=ExtResource("3_pechk")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 525)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=448235207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9, 500)
+mesh = SubResource("PlaneMesh_id10i")

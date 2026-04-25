@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bmufe0hchjnfu"]
+
+[ext_resource type="Script" uid="uid://cdxg4m2uviafe" path="res://stages/stage1/spells/bosses/spell1/bullet_red.gd" id="1_csu7s"]
+[ext_resource type="Texture2D" uid="uid://bjt22s8ap5qyj" path="res://assets/images/etama/bullet1.png" id="2_70b8x"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_csu7s"]
+blend_mode = 1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ua6wr"]
+radius = 3.16228
+
+[node name="BulletRed" type="Area2D" unique_id=1781348418]
+material = SubResource("CanvasItemMaterial_csu7s")
+scale = Vector2(2, 2)
+script = ExtResource("1_csu7s")
+metadata/_custom_type_script = "uid://dtrlfw78bviyn"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1069278788]
+texture = ExtResource("2_70b8x")
+region_enabled = true
+region_rect = Rect2(224, 32, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=106047618]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_ua6wr")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1269418002]
+position = Vector2(2, 2)
+rect = Rect2(-10, -10, 16, 16)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

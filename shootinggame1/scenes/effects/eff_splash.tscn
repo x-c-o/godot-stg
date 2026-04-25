@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://gdxygo476s25"]
+
+[ext_resource type="Texture2D" uid="uid://l2e764b5y6js" path="res://assets/images/effect/eff_splash.png" id="1_52r3t"]
+[ext_resource type="Script" uid="uid://bagxj71d5pca3" path="res://scripts/effects/eff_splash.gd" id="2_2g0i2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g0i2"]
+atlas = ExtResource("1_52r3t")
+region = Rect2(0, 0, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rl5w"]
+atlas = ExtResource("1_52r3t")
+region = Rect2(0, 16, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7op61"]
+atlas = ExtResource("1_52r3t")
+region = Rect2(0, 32, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm3q1"]
+atlas = ExtResource("1_52r3t")
+region = Rect2(0, 48, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asnix"]
+atlas = ExtResource("1_52r3t")
+region = Rect2(0, 64, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_182ae"]
+atlas = ExtResource("1_52r3t")
+region = Rect2(0, 80, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41ma7"]
+atlas = ExtResource("1_52r3t")
+region = Rect2(0, 96, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1god"]
+atlas = ExtResource("1_52r3t")
+region = Rect2(0, 112, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0654"]
+atlas = ExtResource("1_52r3t")
+region = Rect2(0, 128, 64, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_funi8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g0i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rl5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7op61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm3q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asnix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_182ae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41ma7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1god")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0654")
+}],
+"loop": false,
+"name": &"default",
+"speed": 60.0
+}]
+
+[node name="EffSplash" type="AnimatedSprite2D"]
+rotation = 1.5708
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_funi8")
+autoplay = "default"
+frame_progress = 0.113253
+offset = Vector2(32, 0)
+script = ExtResource("2_2g0i2")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

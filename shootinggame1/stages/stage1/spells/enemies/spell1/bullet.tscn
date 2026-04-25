@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d4c1aaqvfuahq"]
+
+[ext_resource type="Script" uid="uid://w7tvtncj68hr" path="res://stages/stage1/spells/enemies/spell1/bullet.gd" id="1_65dx5"]
+[ext_resource type="Texture2D" uid="uid://bjt22s8ap5qyj" path="res://assets/images/etama/bullet1.png" id="2_1eyo6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ua6wr"]
+radius = 4.5
+
+[node name="Bullet" type="Area2D" unique_id=1239335603]
+scale = Vector2(2, 2)
+script = ExtResource("1_65dx5")
+metadata/_custom_type_script = "uid://dtrlfw78bviyn"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1776060195]
+texture = ExtResource("2_1eyo6")
+region_enabled = true
+region_rect = Rect2(208, 240, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1268403415]
+shape = SubResource("CircleShape2D_ua6wr")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=45693670]
+position = Vector2(2, 2)
+rect = Rect2(-10, -10, 16, 16)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

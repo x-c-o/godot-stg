@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://mng1jtgormfg"]
+
+[ext_resource type="Script" uid="uid://xc4dr7rrhaba" path="res://scripts/player/player1/bullet_sub.gd" id="1_5f0hw"]
+[ext_resource type="Texture2D" uid="uid://c8bpql50wvm2n" path="res://assets/images/player/player1.png" id="2_ffplr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anfj6"]
+size = Vector2(26, 24)
+
+[node name="BulletFollow" type="Area2D" unique_id=1042525512]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_5f0hw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1590958093]
+scale = Vector2(2, 2)
+texture = ExtResource("2_ffplr")
+region_enabled = true
+region_rect = Rect2(0, 160, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1862276963]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_anfj6")

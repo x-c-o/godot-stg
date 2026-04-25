@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bbgvke62vgmjq"]
+
+[ext_resource type="Texture2D" uid="uid://bv2slpg27p2go" path="res://assets/models/lantern/spherical_japanese_paper_lantern_0.png" id="1_7rfyw"]
+[ext_resource type="Texture2D" uid="uid://lc05pkqkdnxl" path="res://assets/models/lantern/spherical_japanese_paper_lantern_2.png" id="2_6vvd2"]
+[ext_resource type="Texture2D" uid="uid://rxvuarqgrh4y" path="res://assets/models/lantern/spherical_japanese_paper_lantern_1.png" id="3_h6uw4"]
+[ext_resource type="Texture2D" uid="uid://bhe6ijbjb6yss" path="res://assets/models/lantern/spherical_japanese_paper_lantern_3.png" id="4_qfu2i"]
+
+[resource]
+resource_name = "sphrere_paperLantern"
+cull_mode = 2
+albedo_texture = ExtResource("1_7rfyw")
+metallic_texture = ExtResource("3_h6uw4")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("3_h6uw4")
+roughness_texture_channel = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+emission_texture = ExtResource("2_6vvd2")
+normal_enabled = true
+normal_texture = ExtResource("4_qfu2i")

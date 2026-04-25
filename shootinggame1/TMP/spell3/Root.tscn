@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt2xnmoiev0aw"]
+
+[ext_resource type="Script" uid="uid://18pf8x63d8dj" path="res://TMP/spell3/root.gd" id="1_b5p2x"]
+
+[node name="Root" type="Node2D"]
+script = ExtResource("1_b5p2x")

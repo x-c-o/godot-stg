@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bcl56a1tw3avp"]
+
+[ext_resource type="Script" uid="uid://lnp31y5qh7wr" path="res://stages/stage1/spells/enemies/spell3/bullet.gd" id="1_iggho"]
+[ext_resource type="Texture2D" uid="uid://bjt22s8ap5qyj" path="res://assets/images/etama/bullet1.png" id="2_frybt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iggho"]
+size = Vector2(14, 12)
+
+[node name="Bullet" type="Area2D" unique_id=546954172]
+scale = Vector2(2, 2)
+script = ExtResource("1_iggho")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=275173685]
+texture = ExtResource("2_frybt")
+region_enabled = true
+region_rect = Rect2(128, 32, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=443897465]
+shape = SubResource("RectangleShape2D_iggho")

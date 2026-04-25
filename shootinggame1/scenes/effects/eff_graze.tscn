@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cx7peijaur7qq"]
+
+[ext_resource type="Texture2D" uid="uid://ctm3fmk8br81h" path="res://assets/images/etama/item.png" id="1_2sqn8"]
+[ext_resource type="Script" uid="uid://57gkmkj07kk" path="res://scripts/effects/eff_graze.gd" id="2_kd50e"]
+
+[node name="EffGraze" type="Sprite2D" unique_id=412555158]
+scale = Vector2(3, 3)
+texture = ExtResource("1_2sqn8")
+region_enabled = true
+region_rect = Rect2(208, 16, 16, 16)
+script = ExtResource("2_kd50e")

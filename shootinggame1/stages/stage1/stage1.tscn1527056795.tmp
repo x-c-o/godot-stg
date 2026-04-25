@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bw20l8wxm47wr"]
+
+[ext_resource type="Script" uid="uid://bn1n0bv5yehfv" path="res://stages/stage1/stage_1.gd" id="1_ace57"]
+[ext_resource type="AudioStream" uid="uid://mfvsjak8uvs2" path="res://assets/sounds/BGM/ルナレインボー.mp3" id="2_er0hr"]
+
+[node name="Stage" type="Node" unique_id=1383902279]
+script = ExtResource("1_ace57")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=553264807]
+stream = ExtResource("2_er0hr")
+autoplay = true
+bus = &"BGM"

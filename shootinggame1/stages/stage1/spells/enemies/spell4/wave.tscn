@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsfemic2xqh0n"]
+
+[sub_resource type="GDScript" id="GDScript_g024c"]
+script/source = "extends Node2D
+
+@export var count := 12
+@export var dir := 0.0
+@export var sprite_idx := 1
+
+@onready var bullet := preload(\"bullet.tscn\")
+
+func generate_bullet(offset : float):
+	var tmp := bullet.instantiate()
+	tmp.sprite_idx = sprite_idx
+	tmp.rotation = dir + offset
+	tmp.speed = 300.0 / (absf(offset) + 1)
+	add_child(tmp)
+
+func _ready() -> void:
+	for i in range(-20, 21):
+		generate_bullet(TAU / 41 * i)
+"
+
+[node name="Wave" type="Node2D"]
+script = SubResource("GDScript_g024c")

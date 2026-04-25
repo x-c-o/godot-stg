@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b20cjfcjsyw03"]
+
+[ext_resource type="Script" uid="uid://cwhtke64x8iln" path="res://scripts/player/player1/bullet_player.gd" id="1_y25gk"]
+[ext_resource type="Texture2D" uid="uid://c8bpql50wvm2n" path="res://assets/images/player/player1/player.png" id="2_y25gk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y25gk"]
+atlas = ExtResource("2_y25gk")
+region = Rect2(192, 160, 64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkf8s"]
+size = Vector2(17, 10)
+
+[node name="Bullet" type="Area2D" unique_id=1890788607]
+rotation = -1.5707964
+scale = Vector2(2, 2)
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_y25gk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=269692472]
+modulate = Color(1, 1, 1, 0.588235)
+texture = SubResource("AtlasTexture_y25gk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1922378950]
+position = Vector2(22.5, 0)
+shape = SubResource("RectangleShape2D_mkf8s")

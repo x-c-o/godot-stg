@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cs1jrr32nt3sj"]
+
+[ext_resource type="FontFile" uid="uid://bsp8teilds64o" path="res://assets/fonts/PMingLiu.ttf" id="1_6vlmn"]
+[ext_resource type="Script" uid="uid://4vnn72lutogj" path="res://scripts/effects/eff_item_get_border_line.gd" id="1_qvo2h"]
+
+[node name="ItemGetBorderLine" type="Line2D" unique_id=1894202843]
+points = PackedVector2Array(-500, 0, 500, 0)
+width = 2.0
+default_color = Color(0, 1, 1, 1)
+round_precision = 1
+script = ExtResource("1_qvo2h")
+
+[node name="Label" type="Label" parent="." unique_id=1269237875]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -142.5
+offset_right = 142.5
+offset_bottom = 33.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_6vlmn")
+theme_override_font_sizes/font_size = 32
+text = "Item Get Border Line..."

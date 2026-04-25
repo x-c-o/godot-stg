@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpo0s2vumbg2g"]
+
+[ext_resource type="Script" uid="uid://bvh8l84nmpyri" path="res://scripts/items/item.gd" id="1_xmu8p"]
+[ext_resource type="Texture2D" uid="uid://ctm3fmk8br81h" path="res://assets/images/etama/item.png" id="2_girrq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhhhv"]
+size = Vector2(12, 12)
+
+[node name="ItemPower" type="Area2D"]
+scale = Vector2(2, 2)
+collision_layer = 64
+script = ExtResource("1_xmu8p")
+ID = "P"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_girrq")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xhhhv")

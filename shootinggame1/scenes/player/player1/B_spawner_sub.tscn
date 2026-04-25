@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://b83med7kvvune"]
+
+[ext_resource type="PackedScene" uid="uid://djmohamrfvyk2" path="res://scenes/player/player1/B_spawner_sub_single.tscn" id="1_frk1i"]
+[ext_resource type="Shader" uid="uid://mlejn2axvo0h" path="res://assets/shaders/brightness.gdshader" id="1_l84uw"]
+[ext_resource type="Script" uid="uid://der1taxh2rk5b" path="res://scripts/player/player1/B_spawner_sub.gd" id="3_ebgb4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l84uw"]
+resource_local_to_scene = true
+shader = ExtResource("1_l84uw")
+shader_parameter/brightness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ctvqc"]
+resource_local_to_scene = true
+shader = ExtResource("1_l84uw")
+shader_parameter/brightness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ebgb4"]
+resource_local_to_scene = true
+shader = ExtResource("1_l84uw")
+shader_parameter/brightness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k8ray"]
+resource_local_to_scene = true
+shader = ExtResource("1_l84uw")
+shader_parameter/brightness = 0.0
+
+[node name="SpawnerSub" type="Node2D" unique_id=2099968502]
+script = ExtResource("3_ebgb4")
+
+[node name="Sub1" parent="." unique_id=1413301649 instance=ExtResource("1_frk1i")]
+material = SubResource("ShaderMaterial_l84uw")
+
+[node name="Sub2" parent="." unique_id=1661405275 instance=ExtResource("1_frk1i")]
+material = SubResource("ShaderMaterial_ctvqc")
+
+[node name="Sub3" parent="." unique_id=628006760 instance=ExtResource("1_frk1i")]
+material = SubResource("ShaderMaterial_ebgb4")
+
+[node name="Sub4" parent="." unique_id=1021105074 instance=ExtResource("1_frk1i")]
+material = SubResource("ShaderMaterial_k8ray")

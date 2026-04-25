@@ -1,0 +1,304 @@
+[gd_resource type="Resource" script_class="DialogueGroup" format=3 uid="uid://cj5oqoyxkvea1"]
+
+[ext_resource type="Script" uid="uid://cjs81nug6ea08" path="res://scripts/dialogues/dialogue.gd" id="1_dlf3w"]
+[ext_resource type="Script" uid="uid://cosnigdks7jt0" path="res://scripts/dialogues/dialogue_group.gd" id="2_l3yyy"]
+[ext_resource type="Texture2D" uid="uid://b5h2aax52y0c4" path="res://assets/images/tachie/001_02.png" id="2_p3abe"]
+[ext_resource type="Texture2D" uid="uid://d37xc03i61c53" path="res://assets/images/tachie/001_05.png" id="3_fhylc"]
+[ext_resource type="Texture2D" uid="uid://cipn1gso4usfj" path="res://assets/images/tachie/054_00.png" id="4_v7qlk"]
+[ext_resource type="Texture2D" uid="uid://bbatlpeyeb5o2" path="res://assets/images/tachie/001_04.png" id="5_pstpl"]
+[ext_resource type="Texture2D" uid="uid://cdwk1erlkfj7t" path="res://assets/images/tachie/054_03.png" id="6_81dio"]
+[ext_resource type="Texture2D" uid="uid://dp3njmb48p4uq" path="res://assets/images/tachie/054_01.png" id="7_pstpl"]
+[ext_resource type="Texture2D" uid="uid://bk4mp2p415hsi" path="res://assets/images/tachie/001_10.png" id="8_81dio"]
+[ext_resource type="Texture2D" uid="uid://dv6tnxw5hofea" path="res://assets/images/tachie/001_01.png" id="9_xxods"]
+[ext_resource type="Texture2D" uid="uid://rtl6cbfknjqi" path="res://assets/images/tachie/001_03.png" id="10_36lgl"]
+[ext_resource type="Texture2D" uid="uid://dirm5pay07epd" path="res://assets/images/tachie/001_00.png" id="11_bnjpr"]
+
+[sub_resource type="Resource" id="Resource_pstpl"]
+script = ExtResource("1_dlf3w")
+character_name = "博丽灵梦"
+tachie = ExtResource("2_p3abe")
+content = "好不容易来到偏远的彼世"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_81dio"]
+script = ExtResource("1_dlf3w")
+character_name = "博丽灵梦"
+tachie = ExtResource("3_fhylc")
+content = "结果要是没目标的话就无聊了"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_dlf3w"]
+script = ExtResource("1_dlf3w")
+character_name = "？？？"
+character_number = -1
+content = "啊啊？这可真是少见呀"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_l3yyy"]
+script = ExtResource("1_dlf3w")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("4_v7qlk")
+content = "原来在这里也会有这样的人呀"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_p3abe"]
+script = ExtResource("1_dlf3w")
+character_name = "博丽灵梦"
+tachie = ExtResource("5_pstpl")
+content = "“这样”是什么意思呀"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_fhylc"]
+script = ExtResource("1_dlf3w")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("4_v7qlk")
+content = "如你所见"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_7t4s2"]
+script = ExtResource("1_dlf3w")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("6_81dio")
+content = "又红又白，吉利的冒傻气的人类"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_v7qlk"]
+script = ExtResource("1_dlf3w")
+character_name = "博丽灵梦"
+tachie = ExtResource("3_fhylc")
+content = "刚才是猫现在又是狐狸…
+这里什么时候变成畜生界了"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_xxods"]
+script = ExtResource("1_dlf3w")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("6_81dio")
+content = "啊，你就是把橙给欺负得很惨的"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_36lgl"]
+script = ExtResource("1_dlf3w")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("7_pstpl")
+content = "人类吧？"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_bnjpr"]
+script = ExtResource("1_dlf3w")
+character_name = "博丽灵梦"
+tachie = ExtResource("8_81dio")
+content = "是吗？"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_lvght"]
+script = ExtResource("1_dlf3w")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("4_v7qlk")
+content = "橙是我的式神"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_r5cml"]
+script = ExtResource("1_dlf3w")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("4_v7qlk")
+content = "现在已经恢复，而且变得更强了"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_lstkb"]
+script = ExtResource("1_dlf3w")
+character_name = "博丽灵梦"
+tachie = ExtResource("8_81dio")
+content = "……变强了吗？"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_axoj0"]
+script = ExtResource("1_dlf3w")
+character_name = "博丽灵梦"
+tachie = ExtResource("5_pstpl")
+content = "等等、你的式神？
+你自己不是式神吗？"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_57vq0"]
+script = ExtResource("1_dlf3w")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("6_81dio")
+content = "我也是式神"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_vijko"]
+script = ExtResource("1_dlf3w")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("6_81dio")
+content = "主人现在还在睡觉"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_bxkai"]
+script = ExtResource("1_dlf3w")
+character_name = "博丽灵梦"
+tachie = ExtResource("3_fhylc")
+content = "果然，你就是目标喽"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_8cipl"]
+script = ExtResource("1_dlf3w")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("6_81dio")
+content = "有什么事吗？"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_i5q65"]
+script = ExtResource("1_dlf3w")
+character_name = "博丽灵梦"
+tachie = ExtResource("3_fhylc")
+content = "关于冥界和显界间界线的修复…"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_i0e0d"]
+script = ExtResource("1_dlf3w")
+character_name = "博丽灵梦"
+tachie = ExtResource("5_pstpl")
+content = "等等，仔细想想"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_2rvjt"]
+script = ExtResource("1_dlf3w")
+character_name = "博丽灵梦"
+tachie = ExtResource("5_pstpl")
+content = "我直接要找的人感觉好像应该是
+你的使役者的样子"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_iw1w4"]
+script = ExtResource("1_dlf3w")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("7_pstpl")
+content = "主人正在冬眠"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_ywyrt"]
+script = ExtResource("1_dlf3w")
+character_name = "博丽灵梦"
+tachie = ExtResource("9_xxods")
+content = "让她起来"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_7bkw3"]
+script = ExtResource("1_dlf3w")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("6_81dio")
+content = "护卫也是我的任务呀"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_l8lmp"]
+script = ExtResource("1_dlf3w")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("7_pstpl")
+content = "没理由让一个欺负我的式神的人
+和主人见面"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_mcl7s"]
+script = ExtResource("1_dlf3w")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("7_pstpl")
+content = "这次就让你在这里
+被变强了的橙杀掉好了"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_wcn40"]
+script = ExtResource("1_dlf3w")
+character_name = "博丽灵梦"
+tachie = ExtResource("2_p3abe")
+content = "猫的话，刚刚见到了……"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_228qk"]
+script = ExtResource("1_dlf3w")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("7_pstpl")
+content = "你说什么？
+那后来怎么样了"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_g7xep"]
+script = ExtResource("1_dlf3w")
+character_name = "博丽灵梦"
+tachie = ExtResource("8_81dio")
+content = "似乎也没什么特别的样子"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_g6i75"]
+script = ExtResource("1_dlf3w")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("6_81dio")
+content = "算了，橙病刚好嘛"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_cn02t"]
+script = ExtResource("1_dlf3w")
+character_name = "博丽灵梦"
+tachie = ExtResource("8_81dio")
+content = "你刚刚不是才说过她恢复了的么"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_w4yc3"]
+script = ExtResource("1_dlf3w")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("4_v7qlk")
+content = "看来我不得不在这里给橙报
+一箭之仇呢"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_vbovu"]
+script = ExtResource("1_dlf3w")
+character_name = "博丽灵梦"
+tachie = ExtResource("3_fhylc")
+content = "如果打倒式神的话"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_msaxa"]
+script = ExtResource("1_dlf3w")
+character_name = "博丽灵梦"
+tachie = ExtResource("10_36lgl")
+content = "再怎么说式神的使役者也该从冬眠中醒来了"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_4rk0e"]
+script = ExtResource("1_dlf3w")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("6_81dio")
+content = "我家主人可是春眠不觉晓哦"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_v36ok"]
+script = ExtResource("1_dlf3w")
+character_name = "博丽灵梦"
+tachie = ExtResource("11_bnjpr")
+content = "算了，不管怎样先从
+眼前的障碍开始"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[resource]
+script = ExtResource("2_l3yyy")
+dialogue_list = Array[ExtResource("1_dlf3w")]([SubResource("Resource_pstpl"), SubResource("Resource_81dio"), SubResource("Resource_dlf3w"), SubResource("Resource_l3yyy"), SubResource("Resource_p3abe"), SubResource("Resource_fhylc"), SubResource("Resource_7t4s2"), SubResource("Resource_v7qlk"), SubResource("Resource_xxods"), SubResource("Resource_36lgl"), SubResource("Resource_bnjpr"), SubResource("Resource_lvght"), SubResource("Resource_r5cml"), SubResource("Resource_lstkb"), SubResource("Resource_axoj0"), SubResource("Resource_57vq0"), SubResource("Resource_vijko"), SubResource("Resource_bxkai"), SubResource("Resource_8cipl"), SubResource("Resource_i5q65"), SubResource("Resource_i0e0d"), SubResource("Resource_2rvjt"), SubResource("Resource_iw1w4"), SubResource("Resource_ywyrt"), SubResource("Resource_7bkw3"), SubResource("Resource_l8lmp"), SubResource("Resource_mcl7s"), SubResource("Resource_wcn40"), SubResource("Resource_228qk"), SubResource("Resource_g7xep"), SubResource("Resource_g6i75"), SubResource("Resource_cn02t"), SubResource("Resource_w4yc3"), SubResource("Resource_vbovu"), SubResource("Resource_msaxa"), SubResource("Resource_4rk0e"), SubResource("Resource_v36ok")])
+metadata/_custom_type_script = "uid://cosnigdks7jt0"

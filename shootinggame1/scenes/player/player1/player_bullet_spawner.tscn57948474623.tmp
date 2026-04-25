@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://1uh0smdy37m1"]
+
+[ext_resource type="Script" uid="uid://cd6gk8g022sv" path="res://scripts/player/player1/bullet_spawner.gd" id="1_2kx0h"]
+[ext_resource type="PackedScene" uid="uid://djmohamrfvyk2" path="res://scenes/player/player1/sub_bullet_spawner.tscn" id="2_4w404"]
+[ext_resource type="Shader" uid="uid://mlejn2axvo0h" path="res://tmp.gdshader" id="3_h5mvh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pdgmq"]
+resource_local_to_scene = true
+shader = ExtResource("3_h5mvh")
+shader_parameter/brightness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eh83m"]
+resource_local_to_scene = true
+shader = ExtResource("3_h5mvh")
+shader_parameter/brightness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rf88g"]
+resource_local_to_scene = true
+shader = ExtResource("3_h5mvh")
+shader_parameter/brightness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r7svp"]
+resource_local_to_scene = true
+shader = ExtResource("3_h5mvh")
+shader_parameter/brightness = 0.0
+
+[node name="BulletSpawner" type="Node2D" unique_id=1503485594]
+script = ExtResource("1_2kx0h")
+
+[node name="Sub1" parent="." unique_id=1413301649 instance=ExtResource("2_4w404")]
+material = SubResource("ShaderMaterial_pdgmq")
+
+[node name="Sub2" parent="." unique_id=554076787 instance=ExtResource("2_4w404")]
+material = SubResource("ShaderMaterial_eh83m")
+
+[node name="Sub3" parent="." unique_id=1864408919 instance=ExtResource("2_4w404")]
+material = SubResource("ShaderMaterial_rf88g")
+
+[node name="Sub4" parent="." unique_id=1148699485 instance=ExtResource("2_4w404")]
+material = SubResource("ShaderMaterial_r7svp")

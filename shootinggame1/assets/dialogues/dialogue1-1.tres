@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="DialogueGroup" format=3 uid="uid://lta8phflykfh"]
+
+[ext_resource type="Script" uid="uid://cjs81nug6ea08" path="res://scripts/dialogues/dialogue.gd" id="1_rtrt3"]
+[ext_resource type="Texture2D" uid="uid://b5h2aax52y0c4" path="res://assets/images/tachie/001_02.png" id="2_af352"]
+[ext_resource type="Texture2D" uid="uid://d37xc03i61c53" path="res://assets/images/tachie/001_05.png" id="3_v3131"]
+[ext_resource type="Texture2D" uid="uid://cipn1gso4usfj" path="res://assets/images/tachie/054_00.png" id="4_lyudg"]
+[ext_resource type="Texture2D" uid="uid://bbatlpeyeb5o2" path="res://assets/images/tachie/001_04.png" id="5_iely2"]
+[ext_resource type="Texture2D" uid="uid://cdwk1erlkfj7t" path="res://assets/images/tachie/054_03.png" id="6_kjlb4"]
+[ext_resource type="Script" uid="uid://cosnigdks7jt0" path="res://scripts/dialogues/dialogue_group.gd" id="12_vk7pl"]
+
+[sub_resource type="Resource" id="Resource_pstpl"]
+script = ExtResource("1_rtrt3")
+character_name = "博丽灵梦"
+tachie = ExtResource("2_af352")
+content = "好不容易来到偏远的彼世"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_81dio"]
+script = ExtResource("1_rtrt3")
+character_name = "博丽灵梦"
+tachie = ExtResource("3_v3131")
+content = "结果要是没目标的话就无聊了"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_dlf3w"]
+script = ExtResource("1_rtrt3")
+character_name = "？？？"
+character_number = -1
+content = "啊啊？这可真是少见呀"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_qhlbh"]
+script = ExtResource("1_rtrt3")
+content = "CALL"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_l3yyy"]
+script = ExtResource("1_rtrt3")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("4_lyudg")
+content = "原来在这里也会有这样的人呀"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_ggt5d"]
+script = ExtResource("1_rtrt3")
+character_name = "博丽灵梦"
+tachie = ExtResource("5_iely2")
+content = "嗯嗯？三花还是九尾"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[sub_resource type="Resource" id="Resource_xovqy"]
+script = ExtResource("1_rtrt3")
+character_name = "八云蓝"
+character_number = 1
+tachie = ExtResource("6_kjlb4")
+content = "都是啦
+吉利的冒傻气的巫女～"
+metadata/_custom_type_script = "uid://cjs81nug6ea08"
+
+[resource]
+script = ExtResource("12_vk7pl")
+dialogue_list = Array[ExtResource("1_rtrt3")]([SubResource("Resource_pstpl"), SubResource("Resource_81dio"), SubResource("Resource_dlf3w"), SubResource("Resource_qhlbh"), SubResource("Resource_l3yyy"), SubResource("Resource_ggt5d"), SubResource("Resource_xovqy")])
+metadata/_custom_type_script = "uid://cosnigdks7jt0"

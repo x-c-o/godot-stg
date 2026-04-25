@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwtm31s61kh50"]
+
+[ext_resource type="Script" uid="uid://dalx7wrg21hyc" path="res://stages/stage1/spells/enemies/spell4/wave.gd" id="1_xr0dj"]
+
+[node name="Square" type="Node2D"]
+script = ExtResource("1_xr0dj")

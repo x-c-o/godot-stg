@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://fffy85dbnpvt"]
+
+[ext_resource type="Texture2D" uid="uid://dkq1jr5lh28x8" path="res://assets/models/pavement/textures/cobblestone_color_diff_1k.jpg" id="1_ksugk"]
+[ext_resource type="Texture2D" uid="uid://c6gette6btk7d" path="res://assets/models/pavement/textures/cobblestone_color_arm_1k.jpg" id="2_gjnmk"]
+[ext_resource type="Texture2D" uid="uid://3e5amef5um07" path="res://assets/models/pavement/textures/cobblestone_color_nor_gl_1k.jpg" id="3_w0afo"]
+
+[resource]
+resource_name = "cobblestone_color"
+cull_mode = 2
+albedo_texture = ExtResource("1_ksugk")
+metallic_texture = ExtResource("2_gjnmk")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_gjnmk")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_w0afo")
+uv1_scale = Vector3(2, 100, 1)
+texture_filter = 2

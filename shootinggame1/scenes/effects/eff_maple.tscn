@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d0ojf5kwx60tp"]
+
+[ext_resource type="Texture2D" uid="uid://f5w2hq8dmkvt" path="res://assets/images/effect/eff_maple.png" id="1_kfbq7"]
+[ext_resource type="Script" uid="uid://boxb2bklijmrt" path="res://scripts/effects/eff_maple.gd" id="1_smep4"]
+
+[node name="EffMaple" type="Sprite2D"]
+texture = ExtResource("1_kfbq7")
+region_enabled = true
+region_rect = Rect2(0, 32, 32, 32)
+script = ExtResource("1_smep4")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dbq4yctt5bba8"]
+
+[ext_resource type="Script" uid="uid://myxdt7h05bwn" path="res://stages/stage1/spells/bosses/spell1/root.gd" id="1_prxek"]
+
+[node name="Root" type="Node2D" unique_id=553498432]
+script = ExtResource("1_prxek")

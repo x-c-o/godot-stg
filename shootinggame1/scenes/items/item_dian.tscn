@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dcrue7tm5felk"]
+
+[ext_resource type="Script" uid="uid://bvh8l84nmpyri" path="res://scripts/items/item.gd" id="1_lppx2"]
+[ext_resource type="Texture2D" uid="uid://ctm3fmk8br81h" path="res://assets/images/etama/item.png" id="2_wkwp2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhhhv"]
+size = Vector2(12, 12)
+
+[node name="ItemDian" type="Area2D" unique_id=1721072651]
+scale = Vector2(2, 2)
+collision_layer = 64
+script = ExtResource("1_lppx2")
+ID = "D"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=671924803]
+texture = ExtResource("2_wkwp2")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1342105486]
+shape = SubResource("RectangleShape2D_xhhhv")

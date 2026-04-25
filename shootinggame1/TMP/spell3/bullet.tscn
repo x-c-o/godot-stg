@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuvgxkn6resgy"]
+
+[ext_resource type="Script" uid="uid://ble0v20b83jpj" path="res://TMP/spell3/bullet.gd" id="1_8nkb7"]
+[ext_resource type="Texture2D" uid="uid://7hmw70h4dfcb" path="res://assets/images/etama/bullet2.png" id="2_8nkb7"]
+
+[sub_resource type="Curve" id="Curve_6va6f"]
+_data = [Vector2(0, 0), 0.0, 1.77528, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_6va6f"]
+offsets = PackedFloat32Array(0, 0.345972, 0.98995)
+colors = PackedColorArray(1, 1, 1, 0, 0.98, 0.98, 0.98, 0.6, 1, 1, 1, 0.901961)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ua6wr"]
+radius = 6.0
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_8nkb7")
+
+[node name="Trail" type="Line2D" parent="."]
+texture_repeat = 1
+width = 12.0
+width_curve = SubResource("Curve_6va6f")
+gradient = SubResource("Gradient_6va6f")
+
+[node name="Bullet" type="Area2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bullet"]
+z_index = 1
+position = Vector2(1, 0)
+texture = ExtResource("2_8nkb7")
+region_enabled = true
+region_rect = Rect2(224, 64, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
+shape = SubResource("CircleShape2D_ua6wr")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Bullet"]
+position = Vector2(5.125, 4)
+scale = Vector2(1.8125, 2)
+rect = Rect2(-10, -10, 16, 16)
+
+[connection signal="screen_exited" from="Bullet/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

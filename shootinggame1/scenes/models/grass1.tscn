@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b2gkm233uwwox"]
+
+[ext_resource type="PackedScene" uid="uid://bholiyr1uoxb8" path="res://assets/models/grass/grass_medium_01_large_a_lod_0.tscn" id="1_tjq7e"]
+
+[node name="Grass" type="Node3D" unique_id=217550556]
+
+[node name="grass_medium_01_large_a_LOD0" parent="." unique_id=1499188171 instance=ExtResource("1_tjq7e")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)

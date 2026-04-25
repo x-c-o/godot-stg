@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dawt8commdrdj"]
+
+[ext_resource type="Script" uid="uid://b4la7sovf3x5g" path="res://TMP/spell2/bullet.gd" id="1_6va6f"]
+[ext_resource type="Texture2D" uid="uid://bjt22s8ap5qyj" path="res://assets/images/etama/bullet1.png" id="2_6va6f"]
+
+[sub_resource type="Curve" id="Curve_6va6f"]
+_data = [Vector2(0, 0), 0.0, 1.77528, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_6va6f"]
+offsets = PackedFloat32Array(0, 0.301508, 0.98995)
+colors = PackedColorArray(0.172549, 0.172549, 1, 0, 0.561, 0.718, 1, 0.4, 0.733, 0.959, 1, 0.8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ua6wr"]
+radius = 7.43303
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_6va6f")
+
+[node name="Trail" type="Line2D" parent="."]
+texture_repeat = 1
+width = 20.0
+width_curve = SubResource("Curve_6va6f")
+gradient = SubResource("Gradient_6va6f")
+
+[node name="Bullet" type="Area2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bullet"]
+texture = ExtResource("2_6va6f")
+region_enabled = true
+region_rect = Rect2(16, 96, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
+shape = SubResource("CircleShape2D_ua6wr")

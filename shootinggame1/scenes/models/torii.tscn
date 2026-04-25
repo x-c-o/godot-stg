@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://d3nq01rqow5f4"]
+
+[ext_resource type="PackedScene" uid="uid://diyvbrmml0n22" path="res://assets/models/torii/torii.glb" id="1_oup2b"]
+
+[node name="Torii" type="Node3D" unique_id=897180597]
+
+[node name="Sketchfab_Scene" parent="." unique_id=1382753551 instance=ExtResource("1_oup2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 63, 0)
+
+[node name="LightLB" type="OmniLight3D" parent="." unique_id=431644015]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 30, 8)
+omni_range = 20.0
+
+[node name="LightRB" type="OmniLight3D" parent="." unique_id=1256308977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 30, 8)
+light_volumetric_fog_energy = 16.0
+omni_range = 20.0
+
+[node name="LightLT" type="OmniLight3D" parent="." unique_id=431814348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 100, 8)
+light_energy = 40.0
+omni_range = 64.0
+
+[node name="LightRT" type="OmniLight3D" parent="." unique_id=2059426780]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 100, 8)
+light_energy = 40.0
+light_volumetric_fog_energy = 16.0
+omni_range = 64.0

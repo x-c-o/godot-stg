@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://cm6rmifij3q1q"]
+
+[ext_resource type="Texture2D" uid="uid://bc8o5gb326vk8" path="res://assets/images/effect/etbreak.png" id="1_engre"]
+[ext_resource type="Script" uid="uid://cxys4r7e7ej6c" path="res://scripts/effects/eff_break.gd" id="2_rfe5j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfe5j"]
+atlas = ExtResource("1_engre")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kv8r"]
+atlas = ExtResource("1_engre")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbbto"]
+atlas = ExtResource("1_engre")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqlya"]
+atlas = ExtResource("1_engre")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kgqx"]
+atlas = ExtResource("1_engre")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8ai7"]
+atlas = ExtResource("1_engre")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sij2"]
+atlas = ExtResource("1_engre")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hb1a0"]
+atlas = ExtResource("1_engre")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xd61v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfe5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kv8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbbto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqlya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kgqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8ai7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sij2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hb1a0")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=246769474]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_xd61v")
+autoplay = "default"
+script = ExtResource("2_rfe5j")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

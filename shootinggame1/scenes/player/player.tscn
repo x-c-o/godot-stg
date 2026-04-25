@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dq5d23xfprxlg"]
+
+[ext_resource type="Script" uid="uid://ckxc2iv6pm6a" path="res://scripts/player/player.gd" id="1_p47bc"]
+[ext_resource type="Script" uid="uid://3omdoythuuqs" path="res://scripts/player/chara.gd" id="3_0owmy"]
+[ext_resource type="Texture2D" uid="uid://c3h074vnrqvt3" path="res://assets/images/effect/eff_sloweffect.png" id="4_lvxji"]
+[ext_resource type="Script" uid="uid://cwseut6jmyxoe" path="res://scripts/player/border.gd" id="4_qek5x"]
+[ext_resource type="PackedScene" uid="uid://bh6lhldvfxedu" path="res://scenes/effects/eff_circ.tscn" id="5_p47bc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tuyoq"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p47bc"]
+radius = 29.017237
+
+[node name="Player" type="Area2D" unique_id=1886201802]
+collision_mask = 78
+script = ExtResource("1_p47bc")
+speed = 500
+speed_slow = 250
+
+[node name="Chara" type="AnimatedSprite2D" parent="." unique_id=794752871]
+z_index = -1
+scale = Vector2(2, 2)
+script = ExtResource("3_0owmy")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=685843294]
+shape = SubResource("CircleShape2D_tuyoq")
+
+[node name="Graze" type="Area2D" parent="." unique_id=1397032088]
+collision_layer = 128
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="Graze" unique_id=1272762188]
+shape = SubResource("CircleShape2D_p47bc")
+
+[node name="Border" type="Node2D" parent="." unique_id=385625787]
+script = ExtResource("4_qek5x")
+
+[node name="BorderSprite1" type="Sprite2D" parent="Border" unique_id=1620976051]
+scale = Vector2(2, 2)
+texture = ExtResource("4_lvxji")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="BorderSprite2" type="Sprite2D" parent="Border" unique_id=1869189339]
+scale = Vector2(2, 2)
+texture = ExtResource("4_lvxji")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="ItemGetCirc" parent="." unique_id=1355193742 instance=ExtResource("5_p47bc")]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="power_changed" from="." to="." method="_on_power_changed"]
+[connection signal="animation_finished" from="Chara" to="Chara" method="_on_animation_finished"]
+[connection signal="area_entered" from="Graze" to="." method="_on_graze_area_entered"]

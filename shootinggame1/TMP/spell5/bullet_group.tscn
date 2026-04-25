@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bemxr5v4e57qc"]
+
+[ext_resource type="Script" uid="uid://b4lf718gduuts" path="res://TMP/spell5/bullet_group.gd" id="1_7qro5"]
+
+[sub_resource type="Gradient" id="Gradient_7qro5"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 0.392157)
+
+[node name="Root" type="Line2D"]
+closed = true
+width = 1.0
+gradient = SubResource("Gradient_7qro5")
+script = ExtResource("1_7qro5")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ji0shs0iqym7"]
+
+[ext_resource type="Script" uid="uid://biucsl5ml1vra" path="res://scripts/autoload/SFX_manager.gd" id="1_14of4"]
+[ext_resource type="AudioStream" uid="uid://q5ym2i73cgt3" path="res://assets/sounds/SFX/se_tan01.wav" id="2_wsjd4"]
+[ext_resource type="AudioStream" uid="uid://6rl01gx8mq1e" path="res://assets/sounds/SFX/se_enep00.wav" id="3_wsjd4"]
+
+[node name="SFXManager" type="Node"]
+script = ExtResource("1_14of4")
+
+[node name="se_tan01" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_wsjd4")
+bus = &"SFX"
+
+[node name="se_enep00" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wsjd4")
+bus = &"SFX"

@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://7a2abvaigice"]
+
+[ext_resource type="Script" uid="uid://bgpxyr1bt6taa" path="res://scripts/main_stage.gd" id="1_lbuyr"]
+[ext_resource type="Texture2D" uid="uid://cth1wakl87lg7" path="res://assets/images/bg/gamebg.png" id="1_tsdbj"]
+[ext_resource type="PackedScene" uid="uid://dq5d23xfprxlg" path="res://scenes/player/player.tscn" id="3_vscnb"]
+[ext_resource type="PackedScene" uid="uid://bw20l8wxm47wr" path="res://stages/stage1/stage1.tscn" id="3_y23v6"]
+[ext_resource type="SpriteFrames" uid="uid://db8tbipssx82j" path="res://assets/images/player/player1/player.tres" id="4_lbuyr"]
+[ext_resource type="Shader" uid="uid://bbb36h3ixpv5l" path="res://assets/shaders/main_stage.gdshader" id="6_lbuyr"]
+[ext_resource type="PackedScene" uid="uid://1uh0smdy37m1" path="res://scenes/player/player1/B_spawner.tscn" id="8_gp5co"]
+[ext_resource type="Shader" uid="uid://bx4opnk2jipor" path="res://assets/shaders/game_border.gdshader" id="8_y23v6"]
+[ext_resource type="PackedScene" uid="uid://o15tkuxmkuo7" path="res://scenes/player/player1/S_spawner.tscn" id="9_41sam"]
+[ext_resource type="PackedScene" uid="uid://cs1jrr32nt3sj" path="res://scenes/effects/eff_item_get_border_line.tscn" id="9_gp5co"]
+[ext_resource type="Script" uid="uid://cae6ukt1drrd4" path="res://scripts/player_data/player_data.gd" id="9_qmkwc"]
+[ext_resource type="FontFile" uid="uid://bsp8teilds64o" path="res://assets/fonts/PMingLiu.ttf" id="9_xb5wm"]
+[ext_resource type="PackedScene" uid="uid://mlss2tmggl76" path="res://stages/stage1/backgrounds/background.tscn" id="11_8qbs2"]
+[ext_resource type="Shader" uid="uid://my3ev4jgny6i" path="res://assets/shaders/game_board.gdshader" id="14_sutjr"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8qbs2"]
+viewport_path = NodePath("OriginGameBG")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pibcb"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xb5wm"]
+viewport_path = NodePath("Mask")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qmkwc"]
+resource_local_to_scene = true
+shader = ExtResource("8_y23v6")
+shader_parameter/mask_texture = SubResource("ViewportTexture_xb5wm")
+shader_parameter/thickness = 2.0000000298024
+shader_parameter/outline_color = Color(0, 1, 1, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_sutjr"]
+viewport_path = NodePath("GameBG")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_e8h65"]
+viewport_path = NodePath("GameText")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mdg0a"]
+viewport_path = NodePath("Game")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8ie50"]
+viewport_path = NodePath("Mask")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pibcb"]
+resource_local_to_scene = true
+shader = ExtResource("14_sutjr")
+shader_parameter/gameBG_texture = SubResource("ViewportTexture_sutjr")
+shader_parameter/gameText_texture = SubResource("ViewportTexture_e8h65")
+shader_parameter/game_texture = SubResource("ViewportTexture_mdg0a")
+shader_parameter/mask_texture = SubResource("ViewportTexture_8ie50")
+shader_parameter/camera_offset = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sutjr"]
+shader = ExtResource("6_lbuyr")
+shader_parameter/strength = 0.08
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/radius = 0.25200001197
+shader_parameter/aberration = 0.0
+shader_parameter/width = 0.04
+shader_parameter/feather = 0.135
+
+[node name="MainStage" type="Node2D" unique_id=1186678537]
+script = ExtResource("1_lbuyr")
+metadata/_edit_horizontal_guides_ = [1120.0]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1557051021]
+z_index = -100
+position = Vector2(0, -120)
+texture = ExtResource("1_tsdbj")
+centered = false
+
+[node name="PlayerData" type="Control" parent="." unique_id=1683608326]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 800.0
+offset_top = 100.0
+offset_right = 840.0
+offset_bottom = 140.0
+script = ExtResource("9_qmkwc")
+
+[node name="Container" type="VBoxContainer" parent="PlayerData" unique_id=1627403151]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreLabel" type="Label" parent="PlayerData/Container" unique_id=1421202750]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_xb5wm")
+theme_override_font_sizes/font_size = 48
+text = "得点：XXX"
+
+[node name="PowerLabel" type="Label" parent="PlayerData/Container" unique_id=737980716]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_xb5wm")
+theme_override_font_sizes/font_size = 48
+text = "Power：XXX"
+
+[node name="FPSLabel" type="Label" parent="PlayerData/Container" unique_id=686352793]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_xb5wm")
+theme_override_font_sizes/font_size = 48
+text = "FPS：XXX"
+
+[node name="OriginGameBG" type="SubViewport" parent="." unique_id=272252691]
+canvas_item_default_texture_filter = 0
+size = Vector2i(800, 840)
+render_target_update_mode = 4
+
+[node name="Background" parent="OriginGameBG" unique_id=1659484941 instance=ExtResource("11_8qbs2")]
+
+[node name="GameBG" type="SubViewport" parent="." unique_id=1471172200]
+transparent_bg = true
+size = Vector2i(1260, 840)
+
+[node name="GameBGTexture" type="TextureRect" parent="GameBG" unique_id=168466000]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_8qbs2")
+stretch_mode = 3
+
+[node name="GameText" type="SubViewport" parent="." unique_id=654469308]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(1260, 840)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameText" unique_id=1644568272]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 0.75, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0.83, 0, 0.5671667, 1)
+theme_override_constants/outline_size = 32
+theme_override_font_sizes/normal_font_size = 64
+theme_override_font_sizes/bold_font_size = 64
+theme_override_font_sizes/bold_italics_font_size = 64
+theme_override_font_sizes/italics_font_size = 64
+theme_override_font_sizes/mono_font_size = 64
+bbcode_enabled = true
+text = "[pulse freq=1.0 color=#ffffff40 ease=-2.0]Somedays, feel like nothing.[/pulse]
+[wave amp=100.0 freq=5.0 connected=1]Somedays, feel like nothing.[/wave]
+[tornado radius=10.0 freq=5.0 connected=1]Somedays, feel like nothing.[/tornado]
+[shake rate=20.0 level=20 connected=1]Somedays, feel like nothing.[/shake]
+[fade start=4 length=14]Somedays, feel like nothing.[/fade]
+[rainbow freq=1.0 sat=0.5 val=0.3 speed=1.0]Somedays, feel like nothing.[/rainbow]
+死亡之后，愈发愉悦。"
+fit_content = true
+
+[node name="Game" type="SubViewport" parent="." unique_id=1765354485]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(1260, 840)
+
+[node name="Camera2D" type="Camera2D" parent="Game" unique_id=484260641]
+
+[node name="Stage" parent="Game" unique_id=1648015693 instance=ExtResource("3_y23v6")]
+
+[node name="Player" parent="Game" unique_id=982696795 instance=ExtResource("3_vscnb")]
+sprite = ExtResource("4_lbuyr")
+bullet_spawner = ExtResource("8_gp5co")
+spell_spawner = ExtResource("9_41sam")
+
+[node name="PlayerBulletPool" type="Node2D" parent="Game" unique_id=133253239]
+
+[node name="BulletPool" type="Node2D" parent="Game" unique_id=491715154]
+
+[node name="SpellPool" type="Node2D" parent="Game" unique_id=1335043675]
+
+[node name="EnemyPool" type="Node2D" parent="Game" unique_id=1551905347]
+
+[node name="BossPool" type="Node2D" parent="Game" unique_id=224275354]
+
+[node name="EffectPool" type="Node2D" parent="Game" unique_id=1414058231]
+
+[node name="ItemPool" type="Node2D" parent="Game" unique_id=56506312]
+
+[node name="ItemGetBorderLine" parent="Game" unique_id=1894202843 instance=ExtResource("9_gp5co")]
+
+[node name="FixedContainer" type="CanvasLayer" parent="Game" unique_id=363669206]
+
+[node name="Mask" type="SubViewport" parent="." unique_id=631298054]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+size = Vector2i(1260, 840)
+
+[node name="PanelContainer" type="PanelContainer" parent="Mask" unique_id=409160438]
+texture_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_pibcb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1066838617]
+
+[node name="Border" type="ColorRect" parent="CanvasLayer" unique_id=1463264915]
+texture_filter = 1
+material = SubResource("ShaderMaterial_qmkwc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Board" type="ColorRect" parent="CanvasLayer" unique_id=993463531]
+texture_filter = 1
+material = SubResource("ShaderMaterial_pibcb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Effect" type="ColorRect" parent="CanvasLayer" unique_id=1816996504]
+visible = false
+texture_filter = 1
+material = SubResource("ShaderMaterial_sutjr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="power_changed" from="Game/Player" to="PlayerData" method="_on_player_power_changed"]
+[connection signal="score_changed" from="Game/Player" to="PlayerData" method="_on_player_score_changed"]

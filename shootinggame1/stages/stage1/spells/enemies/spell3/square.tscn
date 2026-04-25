@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://gje8q76jvwjn"]
+
+[ext_resource type="Script" uid="uid://c663ipjp8yo2c" path="res://stages/stage1/spells/enemies/spell3/square.gd" id="1_7akri"]
+
+[node name="Square" type="Node2D"]
+script = ExtResource("1_7akri")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-200, -200, 400, 400)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
