@@ -1,7 +1,7 @@
 extends Node2D
 
-const origin := Vector2(420, 420)
-const center := Vector2(630, 420)
+const origin := Vector2(420, 500)
+const center := Vector2(640, 480)
 
 @export var lt := Vector2(360, 400)
 @export var rb := Vector2(360, 400)
@@ -13,6 +13,8 @@ const center := Vector2(630, 420)
 @onready var mask := $Mask/PanelContainer
 @onready var color_rect := $CanvasLayer/Board
 @onready var camera := $Game/Camera2D
+@onready var effect := $CanvasLayer/Effect
+@onready var boss_health_bar := $BossHealthBar
 
 @onready var PlayerBulletPool := $Game/PlayerBulletPool
 @onready var BulletPool := $Game/BulletPool
@@ -21,8 +23,8 @@ const center := Vector2(630, 420)
 @onready var ItemPool := $Game/ItemPool
 @onready var BossPool := $Game/BossPool
 @onready var SpellPool := $Game/SpellPool
-@onready var FixedContainer := $Game/FixedContainer
-@onready var ItemGetBorderLine := $Game/ItemGetBorderLine
+@onready var FixedContainer := $GameUI/FixedContainer
+@onready var ItemGetBorderLine := $Game/EffectPool/ItemGetBorderLine
 
 @onready var game_bg_texture := $GameBG/GameBGTexture
 @onready var board_material : ShaderMaterial = $CanvasLayer/Board.material
@@ -36,6 +38,8 @@ func update_layout():
 	mask.size = lt + rb
 	player.lt = origin - pivot + lt
 	player.rb = pivot - origin + rb
+	FixedContainer.position = pivot - lt
+	FixedContainer.size = lt + rb
 
 func _ready() -> void:
 	GameManager.MainStage = self

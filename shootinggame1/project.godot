@@ -29,8 +29,8 @@ GameManager="*res://scenes/autoload/game_manager.tscn"
 
 [display]
 
-window/size/viewport_width=1260
-window/size/viewport_height=840
+window/size/viewport_width=1280
+window/size/viewport_height=960
 
 [editor]
 

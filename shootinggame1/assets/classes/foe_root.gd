@@ -4,8 +4,14 @@ class_name FoeRoot
 
 signal foe_end
 
-@export var max_health := 10.0
-@export var health := 10.0
+@export var max_health := 10.0:
+	set(v):
+		max_health = v
+		update_health()
+@export var health := 10.0:
+	set(v):
+		health = v
+		update_health()
 @export var auto_flip := false
 
 @onready var sprite : AnimatedSprite2D
@@ -71,7 +77,6 @@ func _process(delta: float) -> void:
 	var tposition := position.x
 	tick(delta)
 	calc_damage_per_frame()
-	update_health()
 	if auto_flip:
 		update_animation_flip(position.x - tposition)
 	else:

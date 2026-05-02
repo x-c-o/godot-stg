@@ -23,9 +23,3 @@ region_rect = Rect2(224, 32, 16, 16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=106047618]
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_ua6wr")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1269418002]
-position = Vector2(2, 2)
-rect = Rect2(-10, -10, 16, 16)
-
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

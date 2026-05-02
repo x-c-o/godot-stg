@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://i7vt8doecl3g"]
+
+[ext_resource type="Script" uid="uid://uric1swnwvrh" path="res://stages/stage1/spells/bosses/spell3/bullet.gd" id="1_qvs7i"]
+[ext_resource type="Texture2D" uid="uid://bjt22s8ap5qyj" path="res://assets/images/etama/bullet1.png" id="2_6qmek"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_78u7r"]
+blend_mode = 1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r0spr"]
+radius = 5.0990195
+
+[node name="Root" type="Area2D" unique_id=217437491]
+script = ExtResource("1_qvs7i")
+metadata/_custom_type_script = "uid://dtrlfw78bviyn"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=720167759]
+material = SubResource("CanvasItemMaterial_78u7r")
+scale = Vector2(2, 2)
+texture = ExtResource("2_6qmek")
+region_enabled = true
+region_rect = Rect2(224, 176, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1379172824]
+position = Vector2(-6, 0)
+shape = SubResource("CircleShape2D_r0spr")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://201o01ra7of3"]
+
+[ext_resource type="Script" uid="uid://bsxmqr448fsle" path="res://stages/stage1/spells/bosses/non1/bullet.gd" id="1_4afxq"]
+[ext_resource type="Texture2D" uid="uid://bjt22s8ap5qyj" path="res://assets/images/etama/bullet1.png" id="2_rwtmd"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_csu7s"]
+blend_mode = 1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ua6wr"]
+radius = 2.0
+
+[node name="Bullet" type="Area2D" unique_id=1781348418]
+material = SubResource("CanvasItemMaterial_csu7s")
+scale = Vector2(2, 2)
+script = ExtResource("1_4afxq")
+metadata/_custom_type_script = "uid://dtrlfw78bviyn"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1069278788]
+texture = ExtResource("2_rwtmd")
+region_enabled = true
+region_rect = Rect2(160, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=106047618]
+position = Vector2(2, 0)
+shape = SubResource("CircleShape2D_ua6wr")

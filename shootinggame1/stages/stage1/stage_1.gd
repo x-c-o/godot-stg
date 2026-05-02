@@ -95,7 +95,7 @@ func transition_state(v):
 			state_time = 0.0
 			waves = waves_normal
 		LevelState.STAGE_MID_BOSS:
-			GameManager.BossPool.add_child(boss1.instantiate())
+			GameManager.ps(boss1, GameManager.BossPool)
 		# 其他的会加
 
 func _process(delta: float) -> void:

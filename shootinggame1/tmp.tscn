@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ca8dvkoos8k55"]
+
+[ext_resource type="Texture2D" uid="uid://di0ojd5qpmnin" path="res://assets/images/tachie/001_06.png" id="1_nwaph"]
+
+[sub_resource type="Environment" id="Environment_jcbkg"]
+background_mode = 3
+glow_enabled = true
+glow_strength = 2.0
+glow_hdr_threshold = 0.9
+
+[node name="Node2D" type="Node2D" unique_id=1080498230]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=12958497]
+environment = SubResource("Environment_jcbkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1205849651]
+texture = ExtResource("1_nwaph")

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cjih0860yn62l" path="res://scripts/effects/eff_spell.gd" id="1_tkkt4"]
 [ext_resource type="Shader" uid="uid://c4ocy001qdbh7" path="res://assets/shaders/dissolve.gdshader" id="1_v1myf"]
-[ext_resource type="FontFile" uid="uid://dli5bcq8ns64y" path="res://assets/fonts/XiaolaiSC-Regular.ttf" id="2_tkkt4"]
-[ext_resource type="Texture2D" uid="uid://cr8dmv51rtipi" path="res://assets/models/grass/textures/grass_medium_01_arm_1k.jpg" id="3_athti"]
+[ext_resource type="Texture2D" uid="uid://cipn1gso4usfj" path="res://assets/images/tachie/054_00.png" id="3_athti"]
 [ext_resource type="Shader" uid="uid://d0ktn5r2871la" path="res://assets/shaders/dissolve_label.gdshader" id="3_h6nkg"]
+[ext_resource type="FontFile" uid="uid://dybfrmrxl26ws" path="res://assets/fonts/MIKACHANALL.TTC" id="5_athti"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_tkkt4"]
 frequency = 0.004
@@ -34,7 +34,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Name/NameLabel:material:shader_parameter/ratio")
+tracks/0/path = NodePath("Type/TypeLabel:material:shader_parameter/ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -46,7 +46,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Name:position")
+tracks/1/path = NodePath("Type:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -58,7 +58,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Name:rotation")
+tracks/2/path = NodePath("Type:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -79,6 +79,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [1.0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Background:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Background:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_h6nkg"]
 resource_name = "show"
@@ -86,7 +110,7 @@ length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Name/NameLabel:material:shader_parameter/ratio")
+tracks/0/path = NodePath("Type/TypeLabel:material:shader_parameter/ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -98,7 +122,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Name:position")
+tracks/1/path = NodePath("Type:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -110,7 +134,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Name:rotation")
+tracks/2/path = NodePath("Type:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -145,6 +169,30 @@ tracks/4/keys = {
 "update": 0,
 "values": [1.0, 0.0, 1.0]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Background:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.033333335, 1, 2.5),
+"transitions": PackedFloat32Array(0.4, 5.2780337, 1),
+"update": 0,
+"values": [Vector2(-100, -100), Vector2(0, 0), Vector2(100, 100)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Background:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1, 2.5),
+"transitions": PackedFloat32Array(0.42870942, 4.438278, 1),
+"update": 0,
+"values": [0.3490658503988659, 0.0, -0.3490658503988659]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_athti"]
 _data = {
@@ -159,20 +207,20 @@ script = ExtResource("1_tkkt4")
 material = SubResource("ShaderMaterial_athti")
 texture = ExtResource("3_athti")
 
-[node name="Name" type="Node2D" parent="." unique_id=444618802]
+[node name="Type" type="Node2D" parent="." unique_id=444618802]
 position = Vector2(-200, -200)
 rotation = -0.53930676
 
-[node name="NameLabel" type="Label" parent="Name" unique_id=371197491]
+[node name="TypeLabel" type="Label" parent="Type" unique_id=371197491]
 material = SubResource("ShaderMaterial_h6nkg")
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -352.0
+offset_left = -64.0
 offset_top = -33.5
-offset_right = 352.0
+offset_right = 64.0
 offset_bottom = 33.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -180,9 +228,9 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.23333496, 0.41990814, 0.43033358, 1)
 theme_override_constants/outline_size = 32
-theme_override_fonts/font = ExtResource("2_tkkt4")
-theme_override_font_sizes/font_size = 64
-text = "符卡名「就放在这里吧」"
+theme_override_fonts/font = ExtResource("5_athti")
+theme_override_font_sizes/font_size = 128
+text = "撃破"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=141800219]
 libraries/ = SubResource("AnimationLibrary_athti")

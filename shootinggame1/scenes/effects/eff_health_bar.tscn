@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://mqtxgbvbcqyc"]
+
+[ext_resource type="Script" uid="uid://copbbvqcn6mkj" path="res://scripts/effects/eff_health_bar.gd" id="1_5yd42"]
+[ext_resource type="Shader" uid="uid://do56q37do60b5" path="res://assets/shaders/progress_bar.gdshader" id="1_8yg38"]
+[ext_resource type="FontFile" uid="uid://dybfrmrxl26ws" path="res://assets/fonts/MIKACHANALL.TTC" id="2_74v56"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74v56"]
+bg_color = Color(0.096, 0.15573327, 0.32, 0.78431374)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(18.892157, 0, 18.892157, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yd42"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Gradient" id="Gradient_8yg38"]
+offsets = PackedFloat32Array(0.0019379845, 0.622093, 1)
+colors = PackedColorArray(0.023529412, 0.9843137, 0.3647059, 1, 0.3764706, 0.7411765, 0.972549, 1, 0.78039217, 0.7882353, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_74v56"]
+gradient = SubResource("Gradient_8yg38")
+
+[sub_resource type="Gradient" id="Gradient_74v56"]
+offsets = PackedFloat32Array(0.0019379845, 0.622093, 1)
+colors = PackedColorArray(0.023529412, 0, 0.6862745, 1, 0.6745098, 0.25882354, 0.972549, 1, 0.92941177, 0.22745098, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5yd42"]
+gradient = SubResource("Gradient_74v56")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_74v56"]
+noise_type = 2
+frequency = 0.05
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5yd42"]
+width = 800
+height = 30
+noise = SubResource("FastNoiseLite_74v56")
+seamless = true
+seamless_blend_skirt = 1.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8yg38"]
+noise_type = 2
+frequency = 0.03
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_74v56"]
+width = 800
+height = 30
+noise = SubResource("FastNoiseLite_8yg38")
+seamless = true
+seamless_blend_skirt = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5yd42"]
+shader = ExtResource("1_8yg38")
+shader_parameter/noise = SubResource("NoiseTexture2D_5yd42")
+shader_parameter/noise_c = SubResource("NoiseTexture2D_74v56")
+shader_parameter/gradient_b = SubResource("GradientTexture1D_74v56")
+shader_parameter/gradient_f = SubResource("GradientTexture1D_5yd42")
+shader_parameter/ratio = 0.6070000288325
+
+[node name="Control" type="Control" unique_id=1107352130]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1e-05)
+script = ExtResource("1_5yd42")
+
+[node name="A" type="PanelContainer" parent="." unique_id=1152868937]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_74v56")
+
+[node name="B" type="PanelContainer" parent="A" unique_id=1286047026]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5yd42")
+
+[node name="ColorRect" type="ColorRect" parent="A/B" unique_id=128197328]
+show_behind_parent = true
+texture_repeat = 2
+material = SubResource("ShaderMaterial_5yd42")
+layout_mode = 2
+
+[node name="C" type="Control" parent="A/B" unique_id=40847971]
+layout_mode = 2
+
+[node name="Val" type="Label" parent="A/B/C" unique_id=1297817457]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 2.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_74v56")
+theme_override_font_sizes/font_size = 26
+text = "Val"
+horizontal_alignment = 2
+
+[node name="Name" type="Label" parent="A/B/C" unique_id=1151747492]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -8.5
+offset_right = 64.0
+offset_bottom = 8.5
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("2_74v56")
+theme_override_font_sizes/font_size = 26
+text = "Name"

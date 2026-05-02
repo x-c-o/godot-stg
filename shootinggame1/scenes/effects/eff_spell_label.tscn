@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://b465kx6jrbs8m"]
+
+[ext_resource type="Script" uid="uid://dxyfwusv6isra" path="res://scripts/effects/eff_spell_label.gd" id="1_mlg8k"]
+[ext_resource type="Texture2D" uid="uid://drgjijgc8283y" path="res://assets/images/effect/ascii_960.png" id="1_srne1"]
+[ext_resource type="FontFile" uid="uid://dybfrmrxl26ws" path="res://assets/fonts/MIKACHANALL.TTC" id="3_gviun"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlg8k"]
+atlas = ExtResource("1_srne1")
+region = Rect2(0, 296, 384, 56)
+
+[sub_resource type="Animation" id="Animation_gviun"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_mlg8k"]
+resource_name = "break"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(0.03983003, 0.085377544),
+"update": 0,
+"values": [Vector2(1.2, 1.2), Vector2(5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(0.27739292, 0.2500001),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_srne1"]
+resource_name = "show"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(0.085377544, 1),
+"update": 0,
+"values": [Vector2(5, 0), Vector2(1.2, 1.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(0.2500001, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gviun"]
+_data = {
+&"RESET": SubResource("Animation_gviun"),
+&"break": SubResource("Animation_mlg8k"),
+&"show": SubResource("Animation_srne1")
+}
+
+[node name="EffSpellLabel" type="Control" unique_id=1315705314]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+script = ExtResource("1_mlg8k")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=425949688]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -384.0
+offset_top = 10.0
+offset_bottom = 66.0
+grow_horizontal = 0
+scale = Vector2(5, 1e-05)
+pivot_offset_ratio = Vector2(1, 0.5)
+texture = SubResource("AtlasTexture_mlg8k")
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=748337362]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -3.9999695
+offset_top = 3.8333352
+offset_right = -2.9999695
+offset_bottom = 40.833336
+grow_horizontal = 0
+size_flags_horizontal = 0
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("3_gviun")
+theme_override_font_sizes/font_size = 32
+text = "「通往殊途的倒數計時」"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=582642312]
+libraries/ = SubResource("AnimationLibrary_gviun")
+autoplay = &"show"

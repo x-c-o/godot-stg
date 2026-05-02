@@ -49,15 +49,19 @@ func display_dialogue(idx : int):
 		avaters[current_tachie].texture = current_dialogue.tachie
 	current_index = idx + 1
 
+func update_transform():
+	panel.position = Vector2(-50.0 + 8.0 * sin(0.7 * interval + 0.2), 448.0 + 8.0 * sin(1.0 * interval))
+	panel.rotation = 0.02 * sin(0.7 * interval)
+
 func _ready() -> void:
 	display_dialogue(current_index)
+	update_transform()
 
 var interval := 0.0
 
 func _process(delta: float) -> void:
 	interval += delta
-	panel.position = Vector2(8.0 * sin(0.7 * interval + 0.2), 448.0 + 8.0 * sin(1.0 * interval))
-	panel.rotation = 0.02 * sin(0.7 * interval)
+	update_transform()
 	if Input.get_action_strength("shoot"):
 		if not is_holding:
 			is_holding = true

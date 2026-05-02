@@ -21,6 +21,8 @@ func _process(delta: float) -> void:
 	dis += bounce
 	sprite.scale.x = 1.0 + bounce / 20.0
 	sprite.scale.y = 1.0 - bounce / 50.0
+	if GameManager.out_of_stage(position):
+		queue_free()
 
 #func _ready() -> void:
 	#_speed = speed
@@ -37,7 +39,3 @@ func _process(delta: float) -> void:
 	#speed -= 15.0
 	#sprite.scale.x = 1.0 + bounce / 1000.0
 	#sprite.scale.y = 1.0 - bounce / 5000.0
-
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	#print("blue free")
-	queue_free()

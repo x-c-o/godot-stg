@@ -11,15 +11,15 @@ var speed_dir := 0.0
 func _process(delta: float) -> void:
 	interval_red += delta
 	interval_blue += delta
-	if interval_red > 0.5:
-		interval_red -= 0.5
+	if interval_red > 1.0:
+		interval_red -= 1.0
 		var ran = randf_range(0,TAU)
 		for i in range(36):
 			bullet = GameManager.ps(Bullet_red, GameManager.BulletPool)
 			bullet.dir = ran + TAU / 36 * i
 			bullet.position = global_position
-	if interval_blue > 0.02:
-		interval_blue -= 0.02
+	if interval_blue > 0.05:
+		interval_blue -= 0.05
 		bullet = GameManager.ps(Bullet_blue, GameManager.BulletPool)
 		bullet.dir = dir
 		bullet.position = global_position

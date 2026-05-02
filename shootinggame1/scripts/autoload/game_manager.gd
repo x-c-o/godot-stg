@@ -10,7 +10,7 @@ var EnemyPool : Node2D
 var ItemPool : Node2D
 var BossPool : Node2D
 var SpellPool : Node2D
-var FixedContainer : CanvasLayer
+var FixedContainer : Control
 var Player : Area2D
 
 var dialogue_ui := preload("res://scenes/dialogues/dialogue_ui.tscn")
@@ -70,8 +70,8 @@ func generate_enemy(
 	path_scale := Vector2(1, 1)) -> Array[Node2D]:#返回：[enemy, spell]
 		var tmp : Node2D = enemy.instantiate()
 		tmp.pos = pos
-		tmp.max_health = health
-		tmp.health = health
+		tmp.set_deferred("max_health", max_health)
+		tmp.set_deferred("health", health)
 		tmp.curve = curve
 		tmp.speed_curve = speed_curve
 		tmp.interval = interval

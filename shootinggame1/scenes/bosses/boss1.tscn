@@ -451,7 +451,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-300, -200)]
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_etw88"]
@@ -470,18 +470,45 @@ tracks/0/keys = {
 "values": [Vector2(-500, -400), Vector2(0, -150)]
 }
 
+[sub_resource type="Animation" id="Animation_hyl6u"]
+resource_name = "spell1"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.30778632, 0.183),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spell1_movement"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dq3bg"]
 _data = {
 &"RESET": SubResource("Animation_dq3bg"),
-&"appear": SubResource("Animation_etw88")
+&"appear": SubResource("Animation_etw88"),
+&"spell1": SubResource("Animation_hyl6u")
 }
 
 [node name="Boss" type="Area2D" unique_id=2097099540]
-position = Vector2(-300, -200)
 script = ExtResource("1_ut5v0")
-max_health = null
-health = null
-auto_flip = null
 metadata/_custom_type_script = "uid://skor5epywvfw"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1875542373]

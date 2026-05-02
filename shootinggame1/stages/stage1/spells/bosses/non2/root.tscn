@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b5ln6xfgk52b6"]
+
+[ext_resource type="Script" uid="uid://qui56pyfcinw" path="res://stages/stage1/spells/bosses/non2/root.gd" id="1_l2e4p"]
+
+[node name="Root" type="Node2D" unique_id=1041644172]
+script = ExtResource("1_l2e4p")
