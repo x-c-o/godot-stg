@@ -1,17 +1,25 @@
 [gd_scene format=3 uid="uid://ca8dvkoos8k55"]
 
-[ext_resource type="Texture2D" uid="uid://di0ojd5qpmnin" path="res://assets/images/tachie/001_06.png" id="1_nwaph"]
+[ext_resource type="Texture2D" uid="uid://b5h2aax52y0c4" path="res://assets/images/tachie/001_02.png" id="1_nwaph"]
 
 [sub_resource type="Environment" id="Environment_jcbkg"]
 background_mode = 3
 glow_enabled = true
-glow_strength = 2.0
-glow_hdr_threshold = 0.9
+glow_intensity = 1.78
+glow_strength = 1.44
 
-[node name="Node2D" type="Node2D" unique_id=1080498230]
+[node name="SubViewportContainer" type="SubViewportContainer" unique_id=1645971680]
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=12958497]
-environment = SubResource("Environment_jcbkg")
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1120683200]
+handle_input_locally = false
+render_target_update_mode = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1205849651]
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport" unique_id=643427933]
+position = Vector2(-121, 41)
 texture = ExtResource("1_nwaph")
+centered = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewport" unique_id=43433539]
+environment = SubResource("Environment_jcbkg")

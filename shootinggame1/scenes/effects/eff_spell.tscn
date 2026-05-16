@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dj4jlwl2r55v8"]
 
 [ext_resource type="Script" uid="uid://cjih0860yn62l" path="res://scripts/effects/eff_spell.gd" id="1_tkkt4"]
-[ext_resource type="Shader" uid="uid://c4ocy001qdbh7" path="res://assets/shaders/dissolve.gdshader" id="1_v1myf"]
+[ext_resource type="Shader" uid="uid://c4ocy001qdbh7" path="res://assets/shaders/eff_dissolve.gdshader" id="1_v1myf"]
 [ext_resource type="Texture2D" uid="uid://cipn1gso4usfj" path="res://assets/images/tachie/054_00.png" id="3_athti"]
-[ext_resource type="Shader" uid="uid://d0ktn5r2871la" path="res://assets/shaders/dissolve_label.gdshader" id="3_h6nkg"]
+[ext_resource type="Shader" uid="uid://d0ktn5r2871la" path="res://assets/shaders/eff_dissolve_label.gdshader" id="3_h6nkg"]
 [ext_resource type="FontFile" uid="uid://dybfrmrxl26ws" path="res://assets/fonts/MIKACHANALL.TTC" id="5_athti"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_tkkt4"]

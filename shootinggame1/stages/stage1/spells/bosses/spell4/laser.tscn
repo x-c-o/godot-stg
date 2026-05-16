@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://gvj0cd762pwm"]
+
+[ext_resource type="PackedScene" uid="uid://ckrk1j0ui6mfi" path="res://scenes/danmaku/danmaku_curve_laser.tscn" id="1_y2nlk"]
+[ext_resource type="Script" uid="uid://2a8j7ly1eosa" path="res://stages/stage1/spells/bosses/spell4/laser.gd" id="2_8kbam"]
+
+[node name="DanmakuLaser" unique_id=2025692000 instance=ExtResource("1_y2nlk")]
+script = ExtResource("2_8kbam")

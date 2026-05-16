@@ -11,7 +11,7 @@ extends Area2D
 @export var item_get_radius_slow := 250.0
 @export var graze_radius := 50.0
 @export var max_power := 4.0
-@export var power := 0.0
+@export var power := 4.0
 @export var score := 0
 
 @onready var _chara := $Chara

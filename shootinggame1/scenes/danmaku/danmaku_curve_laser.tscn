@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ckrk1j0ui6mfi"]
+
+[ext_resource type="Texture2D" uid="uid://dlq4xxygfir38" path="res://assets/images/etama/laser1-15.png" id="1_3w8kq"]
+[ext_resource type="Script" uid="uid://c1m7nsd5obd2e" path="res://scripts/danmaku/danmaku_curve_laser.gd" id="2_3w8kq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3w8kq"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3w8kq"]
+blend_mode = 1
+
+[node name="DanmakuLaser" type="Area2D" unique_id=2025692000]
+script = ExtResource("2_3w8kq")
+metadata/_custom_type_script = "uid://c1m7nsd5obd2e"
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=1525744711]
+shape = SubResource("CircleShape2D_3w8kq")
+collide_with_areas = true
+
+[node name="Line2D" type="Line2D" parent="." unique_id=907970423]
+material = SubResource("CanvasItemMaterial_3w8kq")
+texture = ExtResource("1_3w8kq")
+texture_mode = 2
+joint_mode = 2

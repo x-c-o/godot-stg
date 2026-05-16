@@ -1,0 +1,11 @@
+Model Information:
+* title:	Japanese Standing Lantern
+* source:	https://sketchfab.com/3d-models/japanese-standing-lantern-70aed3dc12274120809c97ee26e78fdb
+* author:	Obeonix (https://sketchfab.com/Obeonix)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Japanese Standing Lantern" (https://sketchfab.com/3d-models/japanese-standing-lantern-70aed3dc12274120809c97ee26e78fdb) by Obeonix (https://sketchfab.com/Obeonix) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

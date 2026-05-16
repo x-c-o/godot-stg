@@ -86,7 +86,7 @@ var current_wave := 0
 func _ready() -> void:
 	await owner.ready
 	await get_tree().create_timer(1.0).timeout # for DEBUG
-	current_state = 0
+	current_state = 1
 
 func transition_state(v):
 	current_wave = 0

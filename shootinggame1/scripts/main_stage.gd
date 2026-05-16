@@ -8,13 +8,10 @@ const center := Vector2(640, 480)
 @export var pivot := origin
 @export var item_get_height := 250
 
-@onready var background := $Background
 @onready var player := $Game/Player
 @onready var mask := $Mask/PanelContainer
-@onready var color_rect := $CanvasLayer/Board
-@onready var camera := $Game/Camera2D
-@onready var effect := $CanvasLayer/Effect
-@onready var boss_health_bar := $BossHealthBar
+@onready var camera := $Camera2D
+@onready var boss_health_bar := $OuterUI/BossHealthBar
 
 @onready var PlayerBulletPool := $Game/PlayerBulletPool
 @onready var BulletPool := $Game/BulletPool
@@ -26,14 +23,15 @@ const center := Vector2(640, 480)
 @onready var FixedContainer := $GameUI/FixedContainer
 @onready var ItemGetBorderLine := $Game/EffectPool/ItemGetBorderLine
 
-@onready var game_bg_texture := $GameBG/GameBGTexture
-@onready var board_material : ShaderMaterial = $CanvasLayer/Board.material
+@onready var effect_dash := $GlobalEffect/Dash
+@onready var effect_greyscale := $GameEffect/BBC2/Greyscale
+@onready var effect_underwater := $GameEffect/BBC/Underwater
 
 var camera_shake : float
+var camera_offset : Vector2
 
 func update_layout():
 	ItemGetBorderLine.position = Vector2(0, item_get_height - lt.y)
-	game_bg_texture.position = pivot - center
 	mask.position = pivot - lt
 	mask.size = lt + rb
 	player.lt = origin - pivot + lt
@@ -52,15 +50,14 @@ func _ready() -> void:
 	GameManager.SpellPool = SpellPool
 	GameManager.FixedContainer = FixedContainer
 	GameManager.add_shake.connect(_on_add_shake)
-	camera.offset = center - pivot
+	camera_offset = center - pivot
 	update_layout()
 	player.position = Vector2(0, 300)
 
 func _process(_delta: float) -> void:
 	if player.position.y < ItemGetBorderLine.position.y:
 		GameManager.all_item_collect.emit()
-	board_material.set_shader_parameter("camera_offset",
-		camera_shake * Vector2(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)))
+	camera.offset = camera_offset + camera_shake * Vector2(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0))
 	#var ss = sin(Time.get_ticks_msec() * 0.001)
 	#var cc = sin(Time.get_ticks_msec() * 0.001)
 	#lt = Vector2(360 + 100 * ss, 400 + 100 * cc)

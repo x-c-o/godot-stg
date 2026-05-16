@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cje6vhl3l3pl2"]
+
+[ext_resource type="PackedScene" uid="uid://gd426sr0kpg0" path="res://assets/models/bamboo/scene.gltf" id="1_n4c3m"]
+
+[node name="Bamboo" type="Node3D" unique_id=1589034152]
+
+[node name="Sketchfab_Scene" parent="." unique_id=1685283148 instance=ExtResource("1_n4c3m")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)

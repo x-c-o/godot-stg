@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://djmohamrfvyk2"]
 
-[ext_resource type="Shader" uid="uid://mlejn2axvo0h" path="res://assets/shaders/brightness.gdshader" id="1_l84uw"]
+[ext_resource type="Shader" uid="uid://mlejn2axvo0h" path="res://assets/shaders/eff_brightness.gdshader" id="1_l84uw"]
 [ext_resource type="Texture2D" uid="uid://c8bpql50wvm2n" path="res://assets/images/player/player1/player.png" id="2_ctvqc"]
 [ext_resource type="Script" uid="uid://cu2d64mnchms2" path="res://scripts/player/player1/B_spawner_sub_single.gd" id="3_ebgb4"]
 

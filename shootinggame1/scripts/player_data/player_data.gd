@@ -5,9 +5,11 @@ extends Control
 @onready var fps_label : Label = $Container/FPSLabel
 
 func _on_player_power_changed(power: float, max_power: float) -> void:
+	return
 	power_label.text = "Power：" + ("%0.2f" % power) + " / " + ("%0.2f" % max_power)
 
 func _on_player_score_changed(value: int) -> void:
+	return
 	score_label.text = "得点：" + var_to_str(value)
 
 func _process(_delta: float) -> void:

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://mqtxgbvbcqyc"]
 
 [ext_resource type="Script" uid="uid://copbbvqcn6mkj" path="res://scripts/effects/eff_health_bar.gd" id="1_5yd42"]
-[ext_resource type="Shader" uid="uid://do56q37do60b5" path="res://assets/shaders/progress_bar.gdshader" id="1_8yg38"]
+[ext_resource type="Shader" uid="uid://do56q37do60b5" path="res://assets/shaders/eff_progress_bar.gdshader" id="1_8yg38"]
 [ext_resource type="FontFile" uid="uid://dybfrmrxl26ws" path="res://assets/fonts/MIKACHANALL.TTC" id="2_74v56"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74v56"]

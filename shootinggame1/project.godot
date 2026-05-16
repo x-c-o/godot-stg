@@ -34,7 +34,8 @@ window/size/viewport_height=960
 
 [editor]
 
-movie_writer/movie_file="C:/Users/tete/Desktop/danmaku.avi"
+movie_writer/movie_file="D:/danmaku.avi"
+movie_writer/disable_vsync=true
 movie_writer/mjpeg_quality=0.1
 
 [editor_plugins]
@@ -49,10 +50,6 @@ folder_colors={
 "res://scripts/": "pink",
 "res://stages/": "red"
 }
-
-[filesystem]
-
-import/blender/enabled=false
 
 [input]
 
